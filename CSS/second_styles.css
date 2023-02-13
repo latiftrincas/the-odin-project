@@ -1,0 +1,17 @@
+* {
+    text-align: center;
+}
+
+p {
+    color: blue;
+    font-weight: 200;
+    font-family: Garamond;
+}
+
+.bullet_points {
+    color: black;
+}
+
+.links {
+    background-color: lightblue;
+}

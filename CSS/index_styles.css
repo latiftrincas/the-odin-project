@@ -1,0 +1,19 @@
+* {
+    text-align: center;
+}
+
+img {
+    height: auto;
+    width: 500px;
+}
+
+p {
+    color: black;
+    font-weight: 200;
+    font-family: Garamond;
+}
+
+.click_me {
+    background-color: lightblue;
+    font-weight: 500;
+}
