@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+h1 {
+    color: white;
+}
+
 p {
     color: blue;
     font-weight: 200;
@@ -12,6 +16,30 @@ p {
     color: black;
 }
 
-.links {
+/*.links {
     background-color: lightblue;
+}*/
+
+.header-flex {
+    display: flex;
+    background-color: black;
+    align-items: center;
+}
+
+.header-flex h1 {
+    margin: auto;
+    padding: 10px;
+}
+
+.list-flex {
+    display: flex;
+    /* background-color: pink; */
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.list-flex div {
+    /* background-color: beige; */
+    margin: 30px;
 }
