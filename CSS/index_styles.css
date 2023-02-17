@@ -1,0 +1,96 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("../images/morning.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content;
+    min-width: none;
+
+}
+
+* {
+    text-align: center;
+}
+
+p {
+    color: black;
+    font-weight: 200;
+    font-family: Garamond;
+}
+
+.header1_container {
+    display: flex;
+    background-color: lightgrey;
+    opacity: 0.7;
+    /* background: rbga(200, 0, 0, 1);*/
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.header1 h1 {
+    color: black;
+    margin: auto;
+    padding: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+.body_container {
+    display: flex;
+    /*background-color: antiquewhite;*/
+    flex: 1;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.body_container h2 {
+    color: black;
+    margin: auto;
+    padding: 100px;
+    flex: 1;
+}
+
+.body_container strong {
+    color: black;
+    margin: auto;
+    padding: 100px;
+    flex: 1;
+}
+
+.body2_container {
+    display: flex;
+    /*background-color: azure;*/
+    align-content: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    flex: 1;
+}
+
+.body2_container img {
+    height: auto;
+    width: 500px;
+    margin: auto;
+    flex: 1;
+}
+
+
+
+.foot_container {
+    display: flex;
+    background-color: lightblue;
+    flex-direction: column;
+    align-items: flex-end;
+
+    flex: 1;
+    width: 100%;
+}
+
+.foot_container p {
+    margin: auto;
+    flex: 1;
+}
