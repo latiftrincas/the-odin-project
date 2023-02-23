@@ -6,7 +6,7 @@ body {
     background-image: url("../images/morning.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: max-content;
+    max-height: 100%;
     min-width: none;
 
 }
@@ -31,7 +31,7 @@ p {
 
 }
 
-.header1 h1 {
+.header1_container h1 {
     color: black;
     margin: auto;
     padding: 10px;
@@ -48,14 +48,14 @@ p {
     justify-content: space-between;
 }
 
-.body_container h2 {
+.body1_container h2 {
     color: black;
     margin: auto;
     padding: 100px;
     flex: 1;
 }
 
-.body_container strong {
+.body1_container strong {
     color: black;
     margin: auto;
     padding: 100px;
@@ -88,6 +88,8 @@ p {
 
     flex: 1;
     width: 100%;
+    position: absolute;
+    bottom: 0%;
 }
 
 .foot_container p {
