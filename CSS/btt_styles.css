@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(247, 189, 81);
+}
+
+.title_container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    right: 40%;
+
+}
+
+.title_container h1 {
+    flex: 1;
+    margin: auto;
+    padding: 10px;
+    color: rgb(45, 133, 7);
+    text-align: center;
+    background-color: rgb(130, 246, 52);
+}
+
+
+.UserImages {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+
+}
+
+.UserImages p {
+    margin: 10px;
+    font-size: 29px;
+}
+
+.UserImages img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    margin: 10px;
+    border: 2px solid black;
+
+}
+
+.VS {
+    display: flex;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+}
+
+.VS p {
+    font-size: 35px;
+}
+
+.ScoreBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 65%;
+    left: 49%;
+}
+
+.ScoreBoard p {
+    font-size: 29px;
+    margin: 1px
+}
+
+.ComputerImage {
+    display: flex;
+    position: absolute;
+    height: 672px;
+    right: 10%;
+    top: 20%;
+}
+
+.ComputerImage img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    align-self: center;
+    transform: translate(0px, 53px);
+    border: 2px solid black;
+}

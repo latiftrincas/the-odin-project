@@ -1,5 +1,11 @@
 //  code for bacteria, toothpaste, teeth game 
+const Bacteria = document.getElementById("BacteriaPlayer");
+const Toothpaste = document.getElementById("ToothpastePlayer");
+const Teeth = document.getElementById("TeethPlayer");
+const ScoreBoard = document.getElementById("Score");
 
+let ComputerScore = 0;
+let UserScore = 0;
 
 // function generates random choice for computer player
 function GetComputerChoice() {
@@ -7,25 +13,28 @@ function GetComputerChoice() {
     return Choice[Math.floor(Math.random() * Choice.length)]
 }
 
-
-// function that asks user for play, case insensitive but spelling sensitive 
+// function that asks user for play
 function GetUserChoice() {
-    const Plays = ["bacteria", "toothpaste", "teeth"];
-    Choice = prompt("Please select one: Bacteria, Toothpaste or Teeth")
-    Choice = Choice.toLowerCase();
-    // loop until user chooses correct play
-    while (Plays.includes(Choice) == false) {
-        ChooseAgain = prompt("Watch your spelling!\nPlease select one: Bacteria, Toothpaste or Teeth");
-        Choice = ChooseAgain.toLowerCase();
-    }
-    return Choice
+    Bacteria.addEventListener("click", function () {
+        Choice = "bacteria"
+        Round(Choice)
+    });
+    Toothpaste.addEventListener("click", function () {
+        Choice = "toothpaste"
+        Round(Choice)
+    });
+    Teeth.addEventListener("click", function () {
+        Choice = "teeth"
+        Round(Choice)
+    });
 }
 
-function Outcome(play1, play2) {
-    const plays = [play1, play2];
-    if (play1 == play2) {
+function Outcome(ComputerPlay, UserPlay) {
+    const plays = [ComputerPlay, UserPlay];
+    if (ComputerPlay == UserPlay) {
         return "draw"
     }
+    // if statement that determines winner based on what is in the array
     if (plays.includes("bacteria")) {
         if (plays.includes("toothpaste")) {
             return "toothpaste"
@@ -38,32 +47,39 @@ function Outcome(play1, play2) {
     }
 }
 
-function Round() {
+function Round(Choice) {
     let ComputerPlay = GetComputerChoice();
-    let UserPlay = GetUserChoice();
+    console.log("Computer has played " + ComputerPlay)
+    let UserPlay = Choice;
+    console.log("User has played " + UserPlay)
+    // find the winner of game using outcome function
     let winner = Outcome(ComputerPlay, UserPlay);
 
-    if (winner == ComputerPlay) {
-        return "computer"
-    } else {
-        return "user"
+    // if statement dermines winner by basing it on the returned string of outcome() and compares to choice by computer
+    if (winner == "draw") {
+        return "draw"
+    } else if (winner == ComputerPlay) {
+        ComputerScore++;
+        ScoreBoard.textContent = UserScore + " : " + ComputerScore;
+    } else if (winner == UserPlay) {
+        UserScore++;
+        ScoreBoard.textContent = UserScore + " : " + ComputerScore;
     }
 }
 
 function Game() {
-    ComputerScore = 0;
-    UserScore = 0;
     for (let i = 0; i < 3; i++) {
-        winner = Round();
-        if (winner == "computer") {
+        winner = GetUserChoice();
+        console.log(winner)
+        if (winner == "ComputerWins") {
             ComputerScore++;
             outcome = "The computer has won!\nThe score is\nComputer: " + ComputerScore + "\nUser: " + UserScore;
             console.log(outcome)
-        } else if (winner == "user") {
+        } else if (winner == "UserWins") {
             UserScore++;
             outcome = "The User has won!\nThe score is\nComputer: " + ComputerScore + "\nUser: " + UserScore;
             console.log(outcome)
-        } else {
+        } else if (winner == "draw") {
             console.log("Draw")
         }
     }
@@ -74,4 +90,27 @@ function Game() {
     }
     return GameWinner
 }
-console.log(Game())
+
+Bacteria.addEventListener("mouseenter", function () {
+    Bacteria.style.border = "2px solid blue";
+});
+Bacteria.addEventListener("mouseleave", function () {
+    Bacteria.style.border = "2px solid black";
+});
+Toothpaste.addEventListener("mouseenter", function () {
+    Toothpaste.style.border = "2px solid blue";
+});
+Toothpaste.addEventListener("mouseleave", function () {
+    Toothpaste.style.border = "2px solid black";
+});
+Teeth.addEventListener("mouseenter", function () {
+    Teeth.style.border = "2px solid blue";
+});
+Teeth.addEventListener("mouseleave", function () {
+    Teeth.style.border = "2px solid black";
+});
+
+GetUserChoice()
+
+
+
